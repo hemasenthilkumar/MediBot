@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+body {font-family: Arial, Helvetica, sans-serif; background-color:#48C9B0;padding-top: 0px;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #C70039;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 7%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #FFC300 /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #889593;
+  margin: 2% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+.form-group
+{
+padding-right: 20px;
+padding-left : 20px;
+}
+
+
+.jumbotron
+{
+background-color:#707B7C; 
+}
+</style>
+</head>
+
+<body background="{{url_for('static', filename='land_s_end-wallpaper-1600x900.jpg')}}">
+
+<center>
+<div class="jumbotron">
+<h2>MeditBot Admin Portal</h2>
+<button  onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login <span class="glyphicon glyphicon-off"></span></button>
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" method="POST">
+	<img src="{{url_for('static', filename='Profile-512.png')}}" alt="Avatar" class="avatar">
+  	{{ form.hidden_tag()}}
+<dir class="form-group">
+	{{form.username.label(class="form-control-label") }}
+	{{ form.username(class="form-control form-control-lg")}}
+</dir>
+<dir class="form-group">
+        {{form.password.label(class="form-control-label") }}
+	{{ form.password(class="form-control")}}
+<br>
+<br>
+	{{ form.submit(class="btn btn-success")}}
+
+</dir>
+  </form>
+</div>
+	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;
+	
+<button  onclick="window.location.href='http://127.0.0.1:5000/medi'">Back <span class="glyphicon glyphicon-fast-backward"></span></button>
+<h5> <b>Logged user: {{u1}} </b></h5>
+</div>
+</center>
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>

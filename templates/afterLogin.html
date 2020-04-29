@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+body {font-family: Arial, Helvetica, sans-serif; background-color:#48C9B0;padding-top: 0px;}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #C70039;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 10%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #FFC300 /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #889593;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 60%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+.log{
+    position : fixed;
+   right:40px;
+   top:10px;
+}
+
+.jumbotron
+{
+background-color:#707B7C; 
+}
+</style>
+</head>
+
+
+
+<body background="{{url_for('static', filename='land_s_end-wallpaper-1600x900.jpg')}}">
+
+<div class="jumbotron">
+<div class="log">
+<button class="btn btn-warning btn-block" onclick="window.location.href='http://127.0.0.1:5000/admin'">Logout</button>
+</div>
+<center>
+<h2>MeditBot Admin Portal</h2>
+<button class="btn btn-primary" onclick="window.location.href='http://127.0.0.1:5000/save'">Upload Files <span class="glyphicon glyphicon-upload"></span></button>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;
+<button class="btn btn-primary"onclick="window.location.href='http://127.0.0.1:5000/del'">Delete Files <span class="glyphicon glyphicon-remove"></span></button>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;
+<button class="btn btn-primary"onclick="window.location.href='http://127.0.0.1:5000/view'">View Files <span class="glyphicon glyphicon-folder-open"></span></button>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;
+<button class="btn btn-primary"onclick="window.location.href='http://127.0.0.1:5000/viewFeedbacks'">View Feedbacks <span class="glyphicon glyphicon-user"></span></button>
+<div class="container"><h3> Logged user: {{u1}} </h3></div>
+</div>
+</center>
+
+</body>
+</html>

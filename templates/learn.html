@@ -1,0 +1,129 @@
+ <!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<style>
+body {
+  font-family: "Lato", sans-serif;
+	background-color: #48C9B0;
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 200px; /* Same as the width of the sidenav */
+	background-color: #48C9B0;
+	padding-top: 70px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 25px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+.item
+{
+padding-top: 40px;
+}
+
+a
+{
+color: black;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+   <a href="http://127.0.0.1:5000/medi">Meditate</a>
+  <a href="http://127.0.0.1:5000/learn">Learn</a>
+  <a href="http://127.0.0.1:5000/feed">Feedback</a>
+  <a href="http://127.0.0.1:5000/contact">Contact</a>
+  <a href="http://127.0.0.1:5000/admin">Admin</a>
+</div>
+
+<div class="main">
+
+<center>	 
+<table>
+<td><button class="btn btn-primary" onclick="window.location.href='http://127.0.0.1:5000/file/intro.pdf'">Read introduction</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="btn btn-primary" onclick="window.location.href='http://127.0.0.1:5000/file/introduction.mp4'">View introductory video</button></td>
+</table>
+<div class="container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+     <li data-target="#myCarousel" data-slide-to="4"></li>
+     <li data-target="#myCarousel" data-slide-to="5"></li>
+     <li data-target="#myCarousel" data-slide-to="6"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="{{url_for('static', filename='s1.png')}}" alt="Los Angeles" style="width:80%;">
+      </div>
+
+      <div class="item">
+        <img src="{{url_for('static', filename='s2.png')}}" alt="Chicago" style="width:80%;">
+      </div>
+    
+      <div class="item">
+        <img src="{{url_for('static', filename='s3.png')}}" alt="New york" style="width:80%;">
+      </div>
+	
+	 <div class="item">
+        <img src="{{url_for('static', filename='s4.png')}}" alt="New york" style="width:80%;">
+      </div>
+	 <div class="item">
+        <img src="{{url_for('static', filename='s5.png')}}" alt="New york" style="width:80%;">
+      </div>
+	<div class="item">
+        <img src="{{url_for('static', filename='s6.png')}}" alt="New york" style="width:80%;">
+      </div>
+	<div class="item">
+        <img src="{{url_for('static', filename='s7.png')}}" alt="New york" style="width:80%;">
+      </div>
+    </div>
+	
+	
+  </div>
+</div>
+</center>
+</div>
+</body>
+</html> 

@@ -1,0 +1,109 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+<style>
+body {
+  font-family: "Lato", sans-serif;
+	background-color: #48C9B0;
+       background: {{url_for('static', filename='land_s_end-wallpaper-1600x900.jpg')}}
+}
+
+.sidenav {
+  height: 100%;
+  width: 200px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 6px 6px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 140px; /* Same as the width of the sidenav */
+	background-color: #48C9B0;
+padding-left:10em;
+	padding-top:5em
+}
+
+form
+{
+	padding-left:20em;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+   <a href="http://127.0.0.1:5000/medi">Meditate</a>
+  <a href="http://127.0.0.1:5000/learn">Learn</a>
+  <a href="http://127.0.0.1:5000/feed">Feedback</a>
+  <a href="http://127.0.0.1:5000/contact">Contact</a>
+  <a href="http://127.0.0.1:5000/admin">Admin</a>
+</div>
+
+
+
+<div class="main">
+<div class="container-fluid text-center">
+  <h2>SERVICES</h2>
+  <h4>What we offer</h4>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-star"></span>
+      <h4>LEARN SAHAJYOGA</h4>
+      <p>Write to us to get personalised offline sessions..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-heart"></span>
+      <h4>LOVE</h4>
+      <p>Learn to love and appreciate what you have..</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-leaf""></span>
+      <h4>NOURSIH</h4>
+      <p>Nourish your internal and pyshical health..</p>
+    </div>
+  </div>
+  <br><br>
+</div>
+<br>
+<br>
+<form method="POST" class="form-group">
+{{ form.body(cols="55", rows="15") }}
+<br>
+{{form.submit (class="btn btn-warning")}}
+</form>
+<h3>Mail status: {{mes}} </h3>
+<h4> Or call us on 1234567890 for any queries regarding Sahaja Yoga </h4>
+</div>
+</div>
+</body>
+</html>
+</body>
+</html> 
